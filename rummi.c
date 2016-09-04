@@ -12,6 +12,7 @@
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
 
+
 /**
  * Each bit of a Rummi tile (from least signicant)
  * 0-3 = Number value. 0 for joker, 1-13 numbers.
