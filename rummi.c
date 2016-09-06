@@ -3,6 +3,8 @@
 #include <stdbool.h>
 #include <string.h>
 
+#include "rummi.h"
+
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
 #define KGRN  "\x1B[32m"
@@ -23,42 +25,6 @@
 
 //TODO: Most of the constants here are "Max Value" type situations
 
-typedef struct {
-    int info;
-    int size;
-    int card[13];
-} Run;
-
-typedef struct {
-    Run run[35];
-    int runs;
-    int play[106];
-} Board;
-
-typedef struct {
-    int card[106];
-    int position;
-    bool exhausted;
-} Deck;
-
-typedef struct {
-    int card[106];
-    int size;
-} Hand;
-
-typedef struct {
-    Hand hand;
-    char* name;
-} Player;
-
-typedef struct {
-    Board board;
-    Board boardCopy;
-    Deck deck;
-    Player player[2];
-    Hand loose;
-    int currentPlayer;
-} Game;
 
 typedef int Card;
 
