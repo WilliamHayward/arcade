@@ -26,19 +26,6 @@
 //TODO: Most of the constants here are "Max Value" type situations
 
 
-typedef int Card;
-
-char* get_input();
-bool game_over(Game game);
-void perform_action(Game* gamePtr, char* command);
-void shuffle(Game* gamePtr);
-void deal(Game* gamePtr);
-void draw(Game* gamePtr);
-void display_game(Game game);
-void display_board(Board board);
-void display_hand(Hand hand);
-void display_run(Run run);
-void display_card(Card card);
 
 int main(int argc, char** argv) {
     Game game;
@@ -131,25 +118,6 @@ void deal(Game* gamePtr) {
     printf("\n");
 
     *gamePtr = game;
-}
-
-char* get_input() {
-    char* input = malloc(70);
-    int next;
-    int pos = 0;
-    do {
-        next = fgetc(stdin);
-        if(next == EOF) {
-            exit(0);
-        }
-        input[pos] = next;
-        pos++;
-        if(pos > 70) {
-            return "";
-        }
-    } while(next != '\n');
-    input[pos] = '\0';
-    return input;
 }
 
 void help() {
